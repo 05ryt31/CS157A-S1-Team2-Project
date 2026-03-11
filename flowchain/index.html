@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowChain — Surplus Food Redistribution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">FlowChain</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#listings">Browse Listings</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="nav-actions" id="navActions">
+        <a href="#" class="btn btn-outline">Log In</a>
+        <a href="#" class="btn btn-primary">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <h1>Connecting Surplus Food to Those Who Need It</h1>
+      <p class="hero-sub">
+        FlowChain helps food donors post surplus listings and recipient
+        organizations claim them for pickup &mdash; reducing waste, feeding communities.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary btn-lg">Register as Donor</a>
+        <a href="#" class="btn btn-outline btn-lg">Register as Recipient</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="how-it-works" id="about">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-number">1</span>
+          <span class="step-icon" aria-hidden="true">&#128230;</span>
+          <h3>Post Surplus</h3>
+          <p>Donors list surplus food items with details like quantity, category, and expiry date.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">2</span>
+          <span class="step-icon" aria-hidden="true">&#128269;</span>
+          <h3>Browse Listings</h3>
+          <p>Recipients search open listings by category or location to find what they need.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">3</span>
+          <span class="step-icon" aria-hidden="true">&#128587;</span>
+          <h3>Submit a Claim</h3>
+          <p>Recipients request the food they need with a single click.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">4</span>
+          <span class="step-icon" aria-hidden="true">&#9989;</span>
+          <h3>Schedule Pickup</h3>
+          <p>Donor approves the claim and sets a convenient pickup time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LIVE LISTINGS PREVIEW ========== -->
+  <!-- TODO: Replace mockXML with fetch('/api/listings.xml') -->
+  <section class="listings" id="listings">
+    <div class="container">
+      <h2 class="section-title">Recent Open Listings</h2>
+      <div class="listings-grid" id="listingsGrid">
+        <!-- Listing cards rendered by js/main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== USER ROLES ========== -->
+  <section class="roles" id="roles">
+    <div class="container">
+      <h2 class="section-title">Who Uses FlowChain?</h2>
+      <div class="roles-grid">
+        <div class="role-card">
+          <span class="role-icon" aria-hidden="true">&#127978;</span>
+          <h3>Food Donors</h3>
+          <p>Grocery stores, cafes, restaurants, and dining halls with surplus food to share.</p>
+          <a href="#" class="btn btn-primary btn-sm">Register as Donor</a>
+        </div>
+        <div class="role-card">
+          <span class="role-icon" aria-hidden="true">&#127968;</span>
+          <h3>Recipient Organizations</h3>
+          <p>Food banks, shelters, and community pantries that distribute food to those in need.</p>
+          <a href="#" class="btn btn-primary btn-sm">Register as Recipient</a>
+        </div>
+        <div class="role-card">
+          <span class="role-icon" aria-hidden="true">&#128737;</span>
+          <h3>Administrators</h3>
+          <p>Verify organizations, monitor platform activity, and generate redistribution reports.</p>
+          <a href="#" class="btn btn-outline btn-sm">Admin Portal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS BANNER ========== -->
+  <!-- TODO: Replace mockStatsXML with fetch('/api/stats.xml') -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats-grid" id="statsGrid">
+        <!-- Stats rendered by js/main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">FlowChain</a>
+        <p class="footer-tagline">Reducing waste. Feeding communities.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2025 FlowChain &mdash; CS157A Team 2</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
