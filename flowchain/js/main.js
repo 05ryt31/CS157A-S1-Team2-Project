@@ -112,6 +112,7 @@ function getBadgeClass(category) {
 function renderListings() {
   const grid = document.getElementById("listingsGrid");
   if (!grid) return;
+  grid.innerHTML = "";
 
   const xmlDoc = parseXML(mockListingsXML);
   const items = xmlDoc.getElementsByTagName("listing");
@@ -152,19 +153,20 @@ function renderListings() {
 /* === RENDER STATS === */
 
 function renderStats() {
-  var grid = document.getElementById("statsGrid");
+  const grid = document.getElementById("statsGrid");
   if (!grid) return;
+  grid.innerHTML = "";
 
-  var xmlDoc = parseXML(mockStatsXML);
-  var items = xmlDoc.getElementsByTagName("stat");
+  const xmlDoc = parseXML(mockStatsXML);
+  const items = xmlDoc.getElementsByTagName("stat");
 
-  var fragment = document.createDocumentFragment();
+  const fragment = document.createDocumentFragment();
 
   Array.from(items).forEach(function (item) {
-    var label = getTagText(item, "label");
-    var value = getTagText(item, "value");
+    const label = getTagText(item, "label");
+    const value = getTagText(item, "value");
 
-    var div = document.createElement("div");
+    const div = document.createElement("div");
     div.className = "stat-item";
 
     div.innerHTML =
@@ -180,7 +182,7 @@ function renderStats() {
 /* === ESCAPE UTILITY === */
 
 function escapeHTML(str) {
-  var div = document.createElement("div");
+  const div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
@@ -188,7 +190,7 @@ function escapeHTML(str) {
 /* === NAVBAR SCROLL BEHAVIOR === */
 
 function initNavbarScroll() {
-  var navbar = document.getElementById("navbar");
+  const navbar = document.getElementById("navbar");
   if (!navbar) return;
 
   window.addEventListener("scroll", function () {
@@ -197,20 +199,21 @@ function initNavbarScroll() {
     } else {
       navbar.classList.remove("scrolled");
     }
-  });
+  }, { passive: true });
 }
 
 /* === MOBILE NAV TOGGLE === */
 
 function initMobileNav() {
-  var toggle = document.getElementById("navToggle");
-  var links = document.getElementById("navLinks");
-  var actions = document.getElementById("navActions");
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  const actions = document.getElementById("navActions");
   if (!toggle || !links || !actions) return;
 
   toggle.addEventListener("click", function () {
-    links.classList.toggle("active");
+    const isActive = links.classList.toggle("active");
     actions.classList.toggle("active");
+    toggle.setAttribute("aria-expanded", isActive);
   });
 
   // Close menu when a link is clicked
@@ -218,6 +221,7 @@ function initMobileNav() {
     link.addEventListener("click", function () {
       links.classList.remove("active");
       actions.classList.remove("active");
+      toggle.setAttribute("aria-expanded", "false");
     });
   });
 }

@@ -29,6 +29,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--navy);
@@ -83,6 +89,11 @@ img {
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
 }
 
 .btn-primary {
@@ -169,6 +180,12 @@ img {
   color: var(--white);
 }
 
+.nav-links a:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 .nav-actions {
   display: flex;
   gap: 12px;
@@ -182,6 +199,12 @@ img {
   border: none;
   cursor: pointer;
   padding: 4px;
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 .nav-toggle span {
