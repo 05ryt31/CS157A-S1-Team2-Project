@@ -102,7 +102,7 @@ Attributes: `log_id (PK), user_id (FK), action_type, entity_type, entity_id, act
 ---
 
 ## ERD for FlowChain
-<img width="905" height="792" alt="Screenshot 2026-03-17 at 6 51 51 PM" src="https://github.com/user-attachments/assets/14730203-200d-4a69-ad84-9e7015db324e" />
+<img width="600" alt="Screenshot 2026-03-17 at 6 51 51 PM" src="https://github.com/user-attachments/assets/14730203-200d-4a69-ad84-9e7015db324e" />
 
 ---
 
