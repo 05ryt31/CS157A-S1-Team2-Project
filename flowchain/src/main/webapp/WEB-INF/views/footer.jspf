@@ -1,0 +1,11 @@
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="${pageContext.request.contextPath}/" class="footer-logo">FlowChain</a>
+        <p class="footer-tagline">Reducing waste. Feeding communities.</p>
+      </div>
+      <p class="footer-copy">&copy; 2026 FlowChain &mdash; CS157A Team 2</p>
+    </div>
+  </footer>
+</body>
+</html>

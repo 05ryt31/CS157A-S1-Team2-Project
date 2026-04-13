@@ -187,6 +187,8 @@ public class LoginServlet extends HttpServlet {
         if (orgId != null) {
             session.setAttribute("orgId", orgId);
         }
+        // Seed CSRF token for the new session so logout forms work
+        CsrfUtil.getOrCreate(req);
     }
 
     /**

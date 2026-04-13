@@ -336,6 +336,8 @@ public class RegisterServlet extends HttpServlet {
         session.setAttribute("role",     form.role);
         session.setAttribute("fullName", form.fullName);
         session.setAttribute("email",    form.email);
+        // Seed CSRF token for the new session so logout forms work
+        CsrfUtil.getOrCreate(req);
     }
 
     private static String dashboardPath(String role) {
