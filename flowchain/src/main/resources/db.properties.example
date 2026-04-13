@@ -1,0 +1,6 @@
+# Copy this file to db.properties and fill in your local MySQL credentials.
+# db.properties is gitignored — never commit real credentials.
+
+db.url=jdbc:mysql://localhost:3306/flowchain?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+db.user=root
+db.password=changeme
