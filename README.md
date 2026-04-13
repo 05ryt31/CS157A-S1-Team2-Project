@@ -117,9 +117,53 @@ Attributes: `log_id (PK), user_id (FK), action_type, entity_type, entity_id, act
 ---
 
 ## Technologies Used
-- SQL for database creation and queries
-- ER modeling for system design
-- Relational schema design for normalization and integrity
+- **Database:** MySQL 8.x (managed via MySQL Workbench)
+- **Backend:** Java 11, Servlet API 4.0, JSP, JSTL 1.2 (Tomcat 9)
+- **Build:** Apache Maven (WAR packaging)
+- **Auth:** jBCrypt password hashing, session-based login with CSRF tokens
+- **Frontend:** Static HTML/CSS, vanilla JS (XML-driven listings preview)
+
+---
+
+## Local Setup
+
+### 1. Database
+1. Open MySQL Workbench and connect to your local server.
+2. Run `create_tables.sql` to create the `flowchain` schema and tables.
+3. (Optional) Run `insert_mock_data.sql` to seed sample data.
+
+### 2. Configure DB credentials
+```bash
+cd flowchain
+cp src/main/resources/db.properties.example src/main/resources/db.properties
+# Edit db.properties — set db.user and db.password to your MySQL credentials
+```
+`db.properties` is gitignored; never commit real credentials.
+
+### 3. Build the WAR
+```bash
+cd flowchain
+mvn clean package
+# → target/flowchain.war
+```
+
+### 4. Deploy to Tomcat 9
+- Copy `flowchain/target/flowchain.war` into Tomcat's `webapps/` directory.
+- Start Tomcat (`bin/startup.sh` or `bin/catalina.bat run`).
+- Visit <http://localhost:8080/flowchain/>.
+
+### Auth Endpoints (current sprint)
+| Method | Path | Purpose |
+| --- | --- | --- |
+| `GET`  | `/register` | Render registration form (accepts `?role=donor\|recipient`) |
+| `POST` | `/register` | Create org + location + user + orgmember + audit log; auto-login |
+| `GET`  | `/login` | Render login form |
+| `POST` | `/login` | Verify bcrypt password, regenerate session, redirect by role |
+| `POST` | `/logout` | Invalidate session, write audit log, redirect to home |
+
+After login, users are redirected to `/donor/dashboard`,
+`/recipient/dashboard`, or `/admin/dashboard` based on their `role`.
+`AuthFilter` enforces these role boundaries.
 
 ---
 

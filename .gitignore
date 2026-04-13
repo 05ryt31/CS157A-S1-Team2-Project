@@ -1,0 +1,23 @@
+# Maven
+target/
+*.war
+*.jar
+*.class
+
+# Real DB credentials (use db.properties.example as template)
+**/src/main/resources/db.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
