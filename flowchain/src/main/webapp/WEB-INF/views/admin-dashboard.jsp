@@ -12,6 +12,11 @@
       You are signed in as an <strong>Administrator</strong>. Here's
       where you'll verify organizations and review platform activity.
     </p>
+    <div class="dashboard-actions">
+      <a href="${pageContext.request.contextPath}/admin/org"
+         class="btn btn-outline">Manage My Organization</a>
+    </div>
+
     <div class="dashboard-placeholder">
       <p>Admin tools are coming soon.</p>
     </div>
