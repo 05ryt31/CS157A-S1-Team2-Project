@@ -19,6 +19,15 @@ public final class DBConnection {
     private static final String PROPERTIES_FILE = "db.properties";
     private static final Properties PROPS = loadProperties();
 
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException(
+                "MySQL JDBC driver not found. Ensure mysql-connector-j is in WEB-INF/lib/.", e);
+        }
+    }
+
     private DBConnection() {
         // utility class
     }
