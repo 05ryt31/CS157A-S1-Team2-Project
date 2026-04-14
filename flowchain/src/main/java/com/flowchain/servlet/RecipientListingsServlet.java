@@ -19,20 +19,60 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/recipient/listings")
 public class RecipientListingsServlet extends HttpServlet {
 
-    private static final class CategoryRow {
-        int categoryId;
-        String categoryName;
+    public static class CategoryRow {
+        private int categoryId;
+        private String categoryName;
+
+        public int getCategoryId() {
+            return categoryId;
+        }
+
+        public String getCategoryName() {
+            return categoryName;
+        }
     }
 
-    private static final class ListingRow {
-        int listingId;
-        String title;
-        String orgName;
-        String city;
-        String status;
-        int totalQuantity;
-        String categories;
-        Date earliestExpiry;
+    public static class ListingRow {
+        private int listingId;
+        private String title;
+        private String orgName;
+        private String city;
+        private String status;
+        private int totalQuantity;
+        private String categories;
+        private Date earliestExpiry;
+
+        public int getListingId() {
+            return listingId;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public String getOrgName() {
+            return orgName;
+        }
+
+        public String getCity() {
+            return city;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public int getTotalQuantity() {
+            return totalQuantity;
+        }
+
+        public String getCategories() {
+            return categories;
+        }
+
+        public Date getEarliestExpiry() {
+            return earliestExpiry;
+        }
     }
 
     @Override

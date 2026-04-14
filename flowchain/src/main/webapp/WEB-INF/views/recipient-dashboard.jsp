@@ -5,22 +5,39 @@
 
 <main class="dashboard-page">
   <div class="container">
+    
     <h1 class="dashboard-title">
       Welcome, <c:out value="${sessionScope.fullName}" />
     </h1>
+
     <p class="dashboard-sub">
-      You are signed in as a <strong>Recipient</strong>. Use the listings browser to search available food donations and view details.
+      You are signed in as a <strong>Recipient</strong>. Browse available food listings, apply filters, and view detailed information before submitting claims.
     </p>
 
+    <!-- Main Action -->
     <div class="dashboard-actions">
-      <a href="${pageContext.request.contextPath}/recipient/listings" class="btn btn-primary btn-lg">
+      <a href="${pageContext.request.contextPath}/recipient/listings"
+         class="btn btn-primary btn-lg">
         Browse Listings
       </a>
     </div>
 
-    <div class="dashboard-placeholder">
-      <p>Your claim and pickup tools can be added here next.</p>
+    <!-- Info Section -->
+    <div class="dashboard-info">
+      <h3>What you can do</h3>
+      <ul class="dashboard-list">
+        <li>Search listings by title or organization</li>
+        <li>Filter listings by category and city</li>
+        <li>View listing details including quantity and expiry</li>
+        <li>Track availability of open listings</li>
+      </ul>
     </div>
+
+    <!-- Placeholder for future -->
+    <div class="dashboard-placeholder">
+      <p>Claim submission and pickup tracking features can be added here next.</p>
+    </div>
+
   </div>
 </main>
 
