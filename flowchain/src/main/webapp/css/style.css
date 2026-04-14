@@ -1116,3 +1116,136 @@ img {
     padding: 22px;
   }
 }
+/* === RECIPIENT LISTING DETAIL PAGE === */
+
+.detail-back-btn {
+  margin-bottom: 20px;
+}
+
+.detail-card {
+  background: var(--navy-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.detail-title {
+  margin-bottom: 8px;
+}
+
+.detail-sub {
+  margin-bottom: 0;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.detail-block h3 {
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.detail-block p {
+  color: var(--gray-300);
+  margin-bottom: 8px;
+}
+
+.section-title-left {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  flex-wrap: wrap;
+}
+
+.item-category {
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.item-meta,
+.item-expiry {
+  color: var(--gray-300);
+  font-size: 0.92rem;
+}
+
+.status-closed {
+  background: rgba(176, 190, 197, 0.18);
+  color: var(--gray-300);
+}
+
+.status-approved {
+  background: rgba(76, 175, 80, 0.18);
+  color: #81c784;
+}
+
+.status-pending {
+  background: rgba(255, 213, 79, 0.18);
+  color: #ffd54f;
+}
+
+.status-rejected {
+  background: rgba(239, 83, 80, 0.18);
+  color: #ef9a9a;
+}
+
+.status-scheduled {
+  background: rgba(100, 181, 246, 0.18);
+  color: #90caf9;
+}
+
+.status-completed {
+  background: rgba(76, 175, 80, 0.18);
+  color: #81c784;
+}
+
+.status-progress {
+  background: rgba(77, 208, 225, 0.18);
+  color: #4dd0e1;
+}
+
+.status-default {
+  background: rgba(176, 190, 197, 0.18);
+  color: var(--gray-300);
+}
+
+@media (max-width: 768px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-card {
+    padding: 22px;
+  }
+}
