@@ -72,8 +72,8 @@ public class RegisterServlet extends HttpServlet {
         }
 
         try {
-            int newUserId = registerWithRetry(form);
-            startSession(req, newUserId, form);
+            int[] ids = registerWithRetry(form);
+            startSession(req, ids[0], ids[1], form);
             res.sendRedirect(req.getContextPath() + dashboardPath(form.role));
         } catch (DuplicateException e) {
             errors.put(e.field, e.getMessage());
@@ -178,7 +178,8 @@ public class RegisterServlet extends HttpServlet {
      * Run the full registration transaction, retrying on deadlock (rare but
      * possible under SERIALIZABLE with MAX+1 ID generation).
      */
-    private int registerWithRetry(Form form) throws SQLException, DuplicateException {
+    /** Returns [userId, orgId]. */
+    private int[] registerWithRetry(Form form) throws SQLException, DuplicateException {
         SQLException lastError = null;
         for (int attempt = 1; attempt <= MAX_RETRIES_ON_DEADLOCK; attempt++) {
             try {
@@ -195,7 +196,8 @@ public class RegisterServlet extends HttpServlet {
         throw lastError;
     }
 
-    private int register(Form form) throws SQLException, DuplicateException {
+    /** Returns [userId, orgId]. */
+    private int[] register(Form form) throws SQLException, DuplicateException {
         try (Connection conn = DBConnection.get()) {
             conn.setAutoCommit(false);
             conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
@@ -223,7 +225,7 @@ public class RegisterServlet extends HttpServlet {
                 insertAuditLog(conn, logId, userId, "REGISTER", "USER", userId);
 
                 conn.commit();
-                return userId;
+                return new int[]{userId, orgId};
             } catch (SQLException | DuplicateException e) {
                 conn.rollback();
                 throw e;
@@ -330,13 +332,14 @@ public class RegisterServlet extends HttpServlet {
     /*  Session bootstrap                                           */
     /* ------------------------------------------------------------ */
 
-    private static void startSession(HttpServletRequest req, int userId, Form form) {
+    private static void startSession(HttpServletRequest req, int userId, int orgId, Form form) {
         // Session-fixation defense: discard any pre-existing (anonymous) session
         HttpSession existing = req.getSession(false);
         if (existing != null) existing.invalidate();
 
         HttpSession session = req.getSession(true);
         session.setAttribute("userId",   userId);
+        session.setAttribute("orgId",    orgId);
         session.setAttribute("role",     form.role);
         session.setAttribute("fullName", form.fullName);
         session.setAttribute("email",    form.email);
