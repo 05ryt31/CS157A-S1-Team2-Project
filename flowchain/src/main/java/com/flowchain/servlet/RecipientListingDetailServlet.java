@@ -1,5 +1,4 @@
 package com.flowchain.servlet;
-
 import com.flowchain.db.DBConnection;
 
 import java.io.IOException;
