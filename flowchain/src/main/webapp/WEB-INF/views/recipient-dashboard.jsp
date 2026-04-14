@@ -9,11 +9,17 @@
       Welcome, <c:out value="${sessionScope.fullName}" />
     </h1>
     <p class="dashboard-sub">
-      You are signed in as a <strong>Recipient</strong>. Here's where
-      you'll browse listings and submit claims.
+      You are signed in as a <strong>Recipient</strong>. Use the listings browser to search available food donations and view details.
     </p>
+
+    <div class="dashboard-actions">
+      <a href="${pageContext.request.contextPath}/recipient/listings" class="btn btn-primary btn-lg">
+        Browse Listings
+      </a>
+    </div>
+
     <div class="dashboard-placeholder">
-      <p>Listings browser is coming soon.</p>
+      <p>Your claim and pickup tools can be added here next.</p>
     </div>
   </div>
 </main>

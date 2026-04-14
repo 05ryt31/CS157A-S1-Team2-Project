@@ -147,6 +147,10 @@ public class RegisterServlet extends HttpServlet {
 
         private static String trim(String s) { return s == null ? null : s.trim(); }
         private static boolean isBlank(String s) { return s == null || s.isEmpty(); }
+        
+        public String getOrgName(){
+            return orgName;
+        }
     }
 
     private void renderFormWithErrors(HttpServletRequest req, HttpServletResponse res,

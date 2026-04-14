@@ -22,15 +22,14 @@
 
     <form action="${pageContext.request.contextPath}/register" method="post" class="auth-form" novalidate>
       <input type="hidden" name="csrfToken" value="<c:out value='${csrfToken}' />">
-      <input type="hidden" name="role"      value="<c:out value='${role}' />">
+      <input type="hidden" name="role" value="<c:out value='${role}' />">
 
       <fieldset class="form-section">
         <legend>Organization</legend>
 
         <div class="form-row">
           <label for="orgName">Organization name</label>
-          <input type="text" id="orgName" name="orgName" maxlength="120" required
-                 value="<c:out value='${form.orgName}' />">
+          <input type="text" id="orgName" name="orgName" maxlength="120" required>
           <c:if test="${not empty errors.orgName}">
             <span class="form-error"><c:out value="${errors.orgName}" /></span>
           </c:if>
@@ -39,21 +38,18 @@
         <div class="form-row">
           <label for="orgType">Organization type</label>
           <input type="text" id="orgType" name="orgType" maxlength="60"
-                 placeholder="${role == 'RECIPIENT' ? 'Food Bank, Pantry, Shelter…' : 'Grocery Store, Restaurant…'}"
-                 value="<c:out value='${form.orgType}' />">
+                 placeholder="${role == 'RECIPIENT' ? 'Food Bank, Pantry, Shelter…' : 'Grocery Store, Restaurant…'}">
         </div>
 
         <div class="form-row">
           <label for="phone">Phone</label>
           <input type="tel" id="phone" name="phone" maxlength="20"
-                 placeholder="408-555-0100"
-                 value="<c:out value='${form.phone}' />">
+                 placeholder="408-555-0100">
         </div>
 
         <div class="form-row">
           <label for="address">Address</label>
-          <input type="text" id="address" name="address" maxlength="200" required
-                 value="<c:out value='${form.address}' />">
+          <input type="text" id="address" name="address" maxlength="200" required>
           <c:if test="${not empty errors.address}">
             <span class="form-error"><c:out value="${errors.address}" /></span>
           </c:if>
@@ -62,16 +58,14 @@
         <div class="form-grid-2">
           <div class="form-row">
             <label for="city">City</label>
-            <input type="text" id="city" name="city" maxlength="80" required
-                   value="<c:out value='${form.city}' />">
+            <input type="text" id="city" name="city" maxlength="80" required>
             <c:if test="${not empty errors.city}">
               <span class="form-error"><c:out value="${errors.city}" /></span>
             </c:if>
           </div>
           <div class="form-row">
             <label for="zip">ZIP</label>
-            <input type="text" id="zip" name="zip" maxlength="12" required
-                   value="<c:out value='${form.zip}' />">
+            <input type="text" id="zip" name="zip" maxlength="12" required>
             <c:if test="${not empty errors.zip}">
               <span class="form-error"><c:out value="${errors.zip}" /></span>
             </c:if>
@@ -84,8 +78,7 @@
 
         <div class="form-row">
           <label for="fullName">Your full name</label>
-          <input type="text" id="fullName" name="fullName" maxlength="120" required
-                 value="<c:out value='${form.fullName}' />">
+          <input type="text" id="fullName" name="fullName" maxlength="120" required>
           <c:if test="${not empty errors.fullName}">
             <span class="form-error"><c:out value="${errors.fullName}" /></span>
           </c:if>
@@ -93,8 +86,7 @@
 
         <div class="form-row">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" maxlength="180" required
-                 value="<c:out value='${form.email}' />">
+          <input type="email" id="email" name="email" maxlength="180" required>
           <c:if test="${not empty errors.email}">
             <span class="form-error"><c:out value="${errors.email}" /></span>
           </c:if>
