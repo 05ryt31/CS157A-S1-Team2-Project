@@ -16,11 +16,12 @@ import javax.servlet.http.HttpSession;
  *   /donor/*     → DONOR
  *   /recipient/* → RECIPIENT
  *   /admin/*     → ADMIN
+ *   /account/*   → any authenticated user (no role check)
  *
  * Unauthenticated requests are redirected to /login?next=<original>.
  * Authenticated requests with the wrong role get 403.
  */
-@WebFilter(urlPatterns = {"/donor/*", "/recipient/*", "/admin/*"})
+@WebFilter(urlPatterns = {"/donor/*", "/recipient/*", "/admin/*", "/account", "/account/*"})
 public class AuthFilter implements Filter {
 
     @Override

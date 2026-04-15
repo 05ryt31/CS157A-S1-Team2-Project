@@ -15,6 +15,8 @@
     <div class="dashboard-actions">
       <a href="${pageContext.request.contextPath}/donor/profile"
          class="btn btn-outline">Manage Organization</a>
+      <a href="${pageContext.request.contextPath}/account"
+         class="btn btn-outline">Account Settings</a>
     </div>
 
     <div class="dashboard-placeholder">
