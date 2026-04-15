@@ -6,18 +6,25 @@
 <main class="dashboard-page">
   <div class="container">
 
+    <%-- Back to dashboard --%>
+    <c:choose>
+      <c:when test="${sessionScope.role == 'RECIPIENT'}">
+        <c:set var="dashUrl" value="${pageContext.request.contextPath}/recipient/dashboard" />
+      </c:when>
+      <c:when test="${sessionScope.role == 'ADMIN'}">
+        <c:set var="dashUrl" value="${pageContext.request.contextPath}/admin/dashboard" />
+      </c:when>
+      <c:otherwise>
+        <c:set var="dashUrl" value="${pageContext.request.contextPath}/donor/dashboard" />
+      </c:otherwise>
+    </c:choose>
+    <a href="${dashUrl}" class="btn btn-outline btn-sm detail-back-btn">Back to Dashboard</a>
+
     <h1 class="dashboard-title">Organization Profile</h1>
     <p class="dashboard-sub">
       Manage your organization's information.
       Fields marked with * are required.
     </p>
-
-    <%-- Success banner --%>
-    <c:if test="${param.saved == '1'}">
-      <div class="form-success-banner">
-        Changes saved successfully.
-      </div>
-    </c:if>
 
     <%-- Global error --%>
     <c:if test="${not empty errors['_global']}">

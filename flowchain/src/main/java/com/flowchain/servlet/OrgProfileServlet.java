@@ -177,8 +177,8 @@ public class OrgProfileServlet extends HttpServlet {
                 // Update session fullName/orgName if user edited their own org
                 updateSessionIfOwn(req, orgId);
 
-                String redirectUrl = profileUrlForRole(req);
-                res.sendRedirect(redirectUrl + "?saved=1");
+                // Redirect to the role's dashboard after saving
+                res.sendRedirect(req.getContextPath() + dashboardPath(req));
             } catch (SQLException e) {
                 conn.rollback();
                 throw e;
@@ -413,16 +413,12 @@ public class OrgProfileServlet extends HttpServlet {
         }
     }
 
-    private String profileUrlForRole(HttpServletRequest req) {
+    private static String dashboardPath(HttpServletRequest req) {
         HttpSession session = req.getSession(false);
         String role = (session != null) ? (String) session.getAttribute("role") : null;
-        String ctx = req.getContextPath();
-        if ("ADMIN".equals(role)) {
-            String idParam = req.getParameter("id");
-            return ctx + "/admin/org" + (idParam != null ? "?id=" + idParam : "");
-        }
-        if ("RECIPIENT".equals(role)) return ctx + "/recipient/profile";
-        return ctx + "/donor/profile";
+        if ("RECIPIENT".equals(role)) return "/recipient/dashboard";
+        if ("ADMIN".equals(role))     return "/admin/dashboard";
+        return "/donor/dashboard";
     }
 
     private static String trim(String s) { return s == null ? null : s.trim(); }
