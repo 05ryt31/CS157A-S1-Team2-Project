@@ -15,10 +15,12 @@
     <div class="dashboard-actions">
       <a href="${pageContext.request.contextPath}/donor/profile"
          class="btn btn-outline">Manage Organization</a>
+      <a href="${pageContext.request.contextPath}/donor/listings"
+         class="btn btn-primary">Manage Listings</a>
     </div>
 
     <div class="dashboard-placeholder">
-      <p>Listings management is coming soon.</p>
+      <p>Manage your listings or post new surplus items from the donor console.</p>
     </div>
   </div>
 </main>
