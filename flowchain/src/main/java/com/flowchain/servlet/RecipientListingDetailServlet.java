@@ -1,4 +1,5 @@
 package com.flowchain.servlet;
+
 import com.flowchain.db.DBConnection;
 
 import java.io.IOException;
@@ -20,34 +21,118 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/recipient/listing")
 public class RecipientListingDetailServlet extends HttpServlet {
 
-    private static final class ListingDetail {
-        int listingId;
-        String title;
-        String description;
-        String status;
-        Timestamp createdAt;
-        String orgName;
-        String phone;
-        String address;
-        String city;
-        String zip;
+    public static class ListingDetail {
+        private int listingId;
+        private String title;
+        private String description;
+        private String status;
+        private Timestamp createdAt;
+        private String orgName;
+        private String phone;
+        private String address;
+        private String city;
+        private String zip;
+
+        public int getListingId() {
+            return listingId;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public Timestamp getCreatedAt() {
+            return createdAt;
+        }
+
+        public String getOrgName() {
+            return orgName;
+        }
+
+        public String getPhone() {
+            return phone;
+        }
+
+        public String getAddress() {
+            return address;
+        }
+
+        public String getCity() {
+            return city;
+        }
+
+        public String getZip() {
+            return zip;
+        }
     }
 
-    private static final class ListingItemRow {
-        int listingItemId;
-        String categoryName;
-        int quantity;
-        String unit;
-        Date expiryDate;
+    public static class ListingItemRow {
+        private int listingItemId;
+        private String categoryName;
+        private int quantity;
+        private String unit;
+        private Date expiryDate;
+
+        public int getListingItemId() {
+            return listingItemId;
+        }
+
+        public String getCategoryName() {
+            return categoryName;
+        }
+
+        public int getQuantity() {
+            return quantity;
+        }
+
+        public String getUnit() {
+            return unit;
+        }
+
+        public Date getExpiryDate() {
+            return expiryDate;
+        }
     }
 
-    private static final class ClaimStatusRow {
-        Integer claimId;
-        String claimStatus;
-        Timestamp claimedAt;
-        String pickupStatus;
-        Timestamp scheduledTime;
-        Timestamp completedTime;
+    public static class ClaimStatusRow {
+        private Integer claimId;
+        private String claimStatus;
+        private Timestamp claimedAt;
+        private String pickupStatus;
+        private Timestamp scheduledTime;
+        private Timestamp completedTime;
+
+        public Integer getClaimId() {
+            return claimId;
+        }
+
+        public String getClaimStatus() {
+            return claimStatus;
+        }
+
+        public Timestamp getClaimedAt() {
+            return claimedAt;
+        }
+
+        public String getPickupStatus() {
+            return pickupStatus;
+        }
+
+        public Timestamp getScheduledTime() {
+            return scheduledTime;
+        }
+
+        public Timestamp getCompletedTime() {
+            return completedTime;
+        }
     }
 
     @Override
