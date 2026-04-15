@@ -14,11 +14,15 @@
       You are signed in as a <strong>Recipient</strong>. Browse available food listings, apply filters, and view detailed information before submitting claims.
     </p>
 
-    <!-- Main Action -->
+    <!-- Main Actions -->
     <div class="dashboard-actions">
       <a href="${pageContext.request.contextPath}/recipient/listings"
          class="btn btn-primary btn-lg">
         Browse Listings
+      </a>
+      <a href="${pageContext.request.contextPath}/recipient/profile"
+         class="btn btn-outline">
+        Manage Organization
       </a>
     </div>
 

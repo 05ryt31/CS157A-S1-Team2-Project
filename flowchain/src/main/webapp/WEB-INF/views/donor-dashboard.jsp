@@ -12,6 +12,11 @@
       You are signed in as a <strong>Donor</strong>. Here's where you'll
       manage surplus food listings.
     </p>
+    <div class="dashboard-actions">
+      <a href="${pageContext.request.contextPath}/donor/profile"
+         class="btn btn-outline">Manage Organization</a>
+    </div>
+
     <div class="dashboard-placeholder">
       <p>Listings management is coming soon.</p>
     </div>
