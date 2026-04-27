@@ -854,6 +854,33 @@ img {
   }
 }
 
+/* === ACCOUNT SETTINGS === */
+
+.account-section {
+  margin: 0 auto 28px;
+}
+
+.account-danger-zone {
+  margin: 0 auto 48px;
+  border: 1px solid rgba(239, 83, 80, 0.35);
+  background: rgba(239, 83, 80, 0.04);
+}
+
+.danger-title {
+  color: #ef9a9a;
+}
+
+.btn-danger {
+  background: #c62828;
+  color: var(--white);
+  border: 2px solid #c62828;
+}
+
+.btn-danger:hover {
+  background: #b71c1c;
+  border-color: #b71c1c;
+}
+
 /* === ORG PROFILE === */
 
 .form-success-banner {

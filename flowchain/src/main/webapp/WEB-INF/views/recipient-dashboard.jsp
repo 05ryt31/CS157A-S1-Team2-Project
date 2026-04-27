@@ -24,6 +24,10 @@
          class="btn btn-outline">
         Manage Organization
       </a>
+      <a href="${pageContext.request.contextPath}/account"
+         class="btn btn-outline">
+        Account Settings
+      </a>
     </div>
 
     <!-- Info Section -->
