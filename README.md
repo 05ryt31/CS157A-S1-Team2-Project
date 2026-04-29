@@ -1,9 +1,9 @@
 # FlowChain
 ## CS 157A Team 2 Project
 
-**Course:** CS 157A (Introduction to Database Management Systems)
-**Instructor:** Mike Wu
-**Semester:** Spring 2026
+- **Course:** CS 157A (Introduction to Database Management Systems)
+- **Instructor:** Mike Wu
+- **Semester:** Spring 2026
 
 ---
 
@@ -178,18 +178,11 @@ After login, users are redirected to `/donor/dashboard`,
 ---
 
 ## Purpose of the Project
-This project was developed as part of a Database Management Systems course. The goal is to apply concepts such as:
-
-- Entity Relationship (ER) modeling
-- Normalization
-- Relational schema design
-- Constraints and relationships
-
-to a real-world problem related to food waste management.
+This project was developed as part of a Database Management Systems course. The goal is to apply concepts such an entity–relationship (ER) modeling, normalization, relational schema design, and constraints and relationships to a real-world problem related to food waste management.
 
 ---
 
-## Future Improvements
+## Future Improvements to Initial Plan
 - Add delivery and logistics tracking
 - Build a user interface
 - Implement notifications for new listings
