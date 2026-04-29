@@ -139,6 +139,9 @@ public class RecipientListingsServlet extends HttpServlet {
     private static List<ListingRow> loadListings(String q, String category, String city)
             throws SQLException {
 
+        // Expired items are excluded from the listingitems join so they don't
+        // contribute to total_quantity or earliest_expiry. Listings whose items
+        // are all expired drop out via the HAVING clause below.
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT l.listing_id, l.title, o.org_name, loc.city, l.status, ")
            .append("COALESCE(SUM(li.quantity), 0) AS total_quantity, ")
@@ -147,7 +150,8 @@ public class RecipientListingsServlet extends HttpServlet {
            .append("FROM listings l ")
            .append("JOIN organizations o ON l.org_id = o.org_id ")
            .append("JOIN location loc ON l.location_id = loc.location_id ")
-           .append("LEFT JOIN listingitems li ON l.listing_id = li.listing_id ")
+           .append("LEFT JOIN listingitems li ON l.listing_id = li.listing_id ")                                                                    
+           .append("AND li.expiry_date >= CURDATE() ") 
            .append("LEFT JOIN foodcategories fc ON li.category_id = fc.category_id ")
            .append("WHERE l.status = 'OPEN' ");
 
