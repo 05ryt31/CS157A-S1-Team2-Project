@@ -178,7 +178,7 @@ After login, users are redirected to `/donor/dashboard`,
 ---
 
 ## Purpose of the project
-This project was developed as part of a Database Management Systems course. The goal is to apply concepts such an entity–relationship (ER) modeling, normalization, relational schema design, and constraints and relationships to a real-world problem related to food waste management.
+This project was developed as part of our Database Management Systems course. The goal is to apply concepts such an entity–relationship (ER) modeling, normalization, relational schema design, and constraints and relationships to a real-world problem related to food waste management.
 
 ---
 ## Contributions  
@@ -199,8 +199,13 @@ Contributed to system development and testing, including supporting frontend and
 ---
 
 ## Future improvements to initial plan
-- Add delivery and logistics tracking
-- Build a user interface
-- Implement notifications for new listings
-- Add rating and feedback system
-- Improve scalability for larger datasets
+### Add delivery and logistics tracking
+### Build a mobile-friendly user interface
+### Implement notifications for new listings
+Currently, FlowChain does not support a notification system (whether via push, email, or in-app) to notify users of status updates in a timely manner.
+
+### Add rating and feedback system
+Currently, FlowChain does not support a rating system for food donors and recipients to provide feedback on the services they receive from one another. A review system is crucial aspect of a business-centric platform; for FlowChain, it can validate trust in the platform's users and influence the decisions made by recipients to accept or reject the donations available to them.
+
+### Improve scalability for larger datasets
+At the moment, FlowChain is supported on a small number (3) of machines. Our application has the potential to scale by utilizing the power of a cloud computing service such as Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform.
