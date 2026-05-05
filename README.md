@@ -1,20 +1,20 @@
 # FlowChain
 ## CS 157A Team 2 Project
 
-- **Course:** CS 157A (Introduction to Database Management Systems)
+- **Course:** CS 157A (Introduction to Database Management Systems), section 01
 - **Instructor:** Mike Wu
 - **Semester:** Spring 2026
 
 ---
 
 ## Contributors
-- Ryuto Kawabata (05ryt31)
-- Yug More (Yug-More)
-- Marl Jonson (marljonson)
+- Ryuto Kawabata (`05ryt31`)
+- Yug More (`Yug-More`)
+- Marl Jonson (`marljonson`)
 
 ---
 
-## Project Overview
+## Project overview
 FlowChain is a database management system designed to reduce food waste by connecting food donors with organizations that can redistribute surplus food.
 
 The platform allows donor organizations such as restaurants and grocery stores to post available food, while recipient organizations such as food banks and shelters can claim and manage these donations efficiently.
@@ -28,7 +28,7 @@ FlowChain addresses this problem by providing a centralized database system that
 
 ---
 
-## System Features
+## System features
 - User registration and organization membership
 - Creation and management of food listings by donor organizations
 - Support for multiple food items within a listing
@@ -40,9 +40,9 @@ FlowChain addresses this problem by providing a centralized database system that
 
 ---
 
-## Database Design
+## Database design
 
-### Main Entities
+### Main entities
 
 **Users**
 Stores all registered users in the system
@@ -101,12 +101,12 @@ Attributes: `log_id (PK), user_id (FK), action_type, entity_type, entity_id, act
 
 ---
 
-## ERD for FlowChain
+## Entity–relationship diagram for FlowChain
 <img width="600" alt="Screenshot 2026-03-17 at 6 51 51 PM" src="https://github.com/user-attachments/assets/14730203-200d-4a69-ad84-9e7015db324e" />
 
 ---
 
-## Constraints and Assumptions
+## Constraints and assumptions
 - Each user must belong to at least one organization
 - Only donor-type organizations can create listings
 - Only recipient-type organizations can submit claims
@@ -116,7 +116,7 @@ Attributes: `log_id (PK), user_id (FK), action_type, entity_type, entity_id, act
 
 ---
 
-## Technologies Used
+## Technologies used
 - **Database:** MySQL 8.x (managed via MySQL Workbench)
 - **Backend:** Java 11, Servlet API 4.0, JSP, JSTL 1.2 (Tomcat 9)
 - **Build:** Apache Maven (WAR packaging)
@@ -125,7 +125,7 @@ Attributes: `log_id (PK), user_id (FK), action_type, entity_type, entity_id, act
 
 ---
 
-## Local Setup
+## Local setup
 
 ### 1. Database
 1. Open MySQL Workbench and connect to your local server.
@@ -152,7 +152,7 @@ mvn clean package
 - Start Tomcat (`bin/startup.sh` or `bin/catalina.bat run`).
 - Visit <http://localhost:8080/flowchain/>.
 
-### Auth Endpoints (current sprint)
+### Auth endpoints (current sprint)
 | Method | Path | Purpose |
 | --- | --- | --- |
 | `GET`  | `/register` | Render registration form (accepts `?role=donor\|recipient`) |
@@ -167,7 +167,7 @@ After login, users are redirected to `/donor/dashboard`,
 
 ---
 
-## How the System Works
+## How the system works
 1. A user registers and joins an organization
 2. A donor organization creates a food listing
 3. Listings include multiple items with quantity and expiry details
@@ -177,7 +177,7 @@ After login, users are redirected to `/donor/dashboard`,
 
 ---
 
-## Purpose of the Project
+## Purpose of the project
 This project was developed as part of a Database Management Systems course. The goal is to apply concepts such an entity–relationship (ER) modeling, normalization, relational schema design, and constraints and relationships to a real-world problem related to food waste management.
 
 ---
@@ -198,7 +198,7 @@ Contributed to system development and testing, including supporting frontend and
 
 ---
 
-## Future Improvements to Initial Plan
+## Future improvements to initial plan
 - Add delivery and logistics tracking
 - Build a user interface
 - Implement notifications for new listings
