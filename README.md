@@ -183,18 +183,33 @@ This project was developed as part of our Database Management Systems course. Th
 ---
 ## Contributions  
 
-### Yug More  
+### Yug More (`Yug-More`)
 Contributed across ideation, design, documentation, and implementation. Proposed the FlowChain concept based on research on food waste and helped define the system direction. Completed key sections of the project proposal including Background Information, Project Description, and Functional Requirements.  
 
 Led major parts of the database design, including defining entities, relationships, and creating the ER diagram and relational schemas. Also helped merge all reports into the final submission.  
 
-On the implementation side, built the recipient functionality using `RecipientListingsServlet.java` and `RecipientListingDetailServlet.java`, along with `recipient-listings.jsp` and `recipient-listing-detail.jsp`. Implemented search and filtering, dynamic data rendering, and handled database integration and deployment using Tomcat.  
+On the implementation side, built the recipient functionality using `RecipientListingsServlet.java` and `RecipientListingDetailServlet.java`, along with `recipient-listings.jsp` and `recipient-listing-detail.jsp`. Implemented search and filtering, dynamic data rendering, and handled database integration and deployment using Tomcat.
 
-### Ryuto Kawabata  
-Contributed to backend development, including implementation of authentication and user management features. Worked on servlets related to user registration and login, and supported integration of database operations with the application.  
+Functional requirements (GitHub Issues) owned:
+- Issue
+- Issue
+- Issue
 
-### Marl Jonson  
-Contributed to system development and testing, including supporting frontend and backend integration. 
+### Ryuto Kawabata (`05ryt31`)
+Contributed to backend development, including implementation of authentication and user management features. Worked on servlets related to user registration and login, and supported integration of database operations with the application.
+
+Functional requirements (GitHub Issues) owned:
+- Issue
+- Issue
+- Issue
+
+### Marl Jonson (`marljonson`)
+Contributed to system development and testing, including supporting frontend and backend integration. Revised and polished codebase and non-technical materials (READMEs, video, reports).
+
+Functional requirements (GitHub Issues) owned:
+- Donor: Post and manage listings
+- Recipient: Claim a listing
+- Pickup Scheduling & Completion
 
 ---
 
