@@ -204,7 +204,7 @@ Functional requirements (GitHub Issues) owned:
 - Issue
 
 ### Marl Jonson (`marljonson`)
-Contributed to system development and testing, including supporting frontend and backend integration. Revised and polished codebase and non-technical materials (READMEs, video, reports).
+Contributed to system development and testing, including supporting frontend and backend integration. Revised and polished codebase and non-technical materials (``README.md``, video, reports).
 
 Functional requirements (GitHub Issues) owned:
 - Donor: Post and manage listings

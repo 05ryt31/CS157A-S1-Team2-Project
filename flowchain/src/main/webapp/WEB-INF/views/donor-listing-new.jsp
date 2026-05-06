@@ -80,6 +80,12 @@
           Fill in at least one item row. Extra blank item rows will be ignored.
         </p>
 
+        <c:if test="${not empty error}">
+            <div class="dashboard-placeholder">
+                <p><strong><c:out value="${error}" /></strong></p>
+            </div>
+        </c:if>
+
         <div class="dashboard-actions">
           <button type="submit" class="btn btn-primary">Create Listing</button>
           <a href="${pageContext.request.contextPath}/donor/dashboard" class="btn btn-outline">Cancel</a>
