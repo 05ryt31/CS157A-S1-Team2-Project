@@ -13,11 +13,21 @@
     </h1>
 
     <p class="dashboard-sub">
-      You are signed in as a <strong>Donor</strong>. Here's where you'll
-      manage surplus food listings.
+      You are signed in as a <strong>Donor</strong>. Create and manage surplus food listings.
     </p>
 
     <div class="dashboard-actions">
+      <a href="${pageContext.request.contextPath}/donor/listings/new"
+         class="btn btn-primary">
+        Create Listing
+      </a>
+
+      <%-- link to view all donor listings --%>
+      <a href="${pageContext.request.contextPath}/donor/listings"
+         class="btn btn-outline">
+        View My Listings
+      </a>
+
       <a href="${pageContext.request.contextPath}/donor/profile"
          class="btn btn-outline">
         Manage Organization
@@ -29,16 +39,16 @@
       </a>
     </div>
 
-    <!-- Pending Claim Requests -->
+    <div class="dashboard-placeholder">
+      <p>Use the Create Listing button to start adding surplus food donations.</p>
+    </div>
 
     <section class="detail-card">
-
       <h2 class="section-title section-title-left">
         Pending Claim Requests
       </h2>
 
       <c:choose>
-
         <c:when test="${empty pendingClaims}">
           <div class="dashboard-placeholder">
             <p>No pending claim requests right now.</p>
@@ -46,15 +56,10 @@
         </c:when>
 
         <c:otherwise>
-
           <div class="items-list">
-
             <c:forEach var="claim" items="${pendingClaims}">
-
               <div class="item-row">
-
                 <div>
-
                   <p class="item-category">
                     <c:out value="${claim.recipientOrgName}" />
                     requested
@@ -67,59 +72,40 @@
                     Requested at:
                     <c:out value="${claim.claimedAt}" />
                   </p>
-
                 </div>
 
                 <div style="display:flex; gap:10px;">
-
                   <form method="post"
                         action="${pageContext.request.contextPath}/donor/claim/update">
-
-                    <input type="hidden"
-                           name="claimId"
-                           value="${claim.claimId}" />
+                    <input type="hidden" name="csrfToken" value="${csrfToken}" />
+                    <input type="hidden" name="claimId" value="${claim.claimId}" />
 
                     <button type="submit"
                             name="action"
                             value="approve"
                             class="btn btn-primary btn-sm">
-
                       Approve
-
                     </button>
-
                   </form>
 
                   <form method="post"
                         action="${pageContext.request.contextPath}/donor/claim/update">
-
-                    <input type="hidden"
-                           name="claimId"
-                           value="${claim.claimId}" />
+                    <input type="hidden" name="csrfToken" value="${csrfToken}" />
+                    <input type="hidden" name="claimId" value="${claim.claimId}" />
 
                     <button type="submit"
                             name="action"
                             value="reject"
                             class="btn btn-danger btn-sm">
-
                       Reject
-
                     </button>
-
                   </form>
-
                 </div>
-
               </div>
-
             </c:forEach>
-
           </div>
-
         </c:otherwise>
-
       </c:choose>
-
     </section>
 
   </div>
