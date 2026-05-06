@@ -193,6 +193,7 @@ On the implementation side, built the recipient functionality using `RecipientLi
 Functional requirements (GitHub Issues) owned:
 - Food Categories Setup
 - Recipient: Browse & Search Listings
+- Recipient: Claim a Listing
 - Listing Detail Page & Status Display
 
 ### Ryuto Kawabata (`05ryt31`)
