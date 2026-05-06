@@ -191,9 +191,10 @@ Led major parts of the database design, including defining entities, relationshi
 On the implementation side, built the recipient functionality using `RecipientListingsServlet.java` and `RecipientListingDetailServlet.java`, along with `recipient-listings.jsp` and `recipient-listing-detail.jsp`. Implemented search and filtering, dynamic data rendering, and handled database integration and deployment using Tomcat.
 
 Functional requirements (GitHub Issues) owned:
-- Issue
-- Issue
-- Issue
+- Food Categories Setup
+- Recipient: Browse & Search Listings
+- Recipient: Claim a Listing
+- Listing Detail Page & Status Display
 
 ### Ryuto Kawabata (`05ryt31`)
 Contributed to backend development, including implementation of authentication and user management features. Worked on servlets related to user registration and login, and supported integration of database operations with the application.
