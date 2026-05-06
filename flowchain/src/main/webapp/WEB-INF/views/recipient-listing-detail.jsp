@@ -78,8 +78,18 @@
         <c:when test="${empty myClaim}">
           <div class="dashboard-placeholder">
             <p>You have not submitted a claim for this listing yet.</p>
+
+            <c:if test="${listing.status == 'OPEN'}">
+              <form method="post" action="${pageContext.request.contextPath}/recipient/claim">
+                <input type="hidden" name="listingId" value="${listing.listingId}" />
+                <button type="submit" class="btn btn-primary">
+                  Claim Listing
+                </button>
+              </form>
+            </c:if>
           </div>
         </c:when>
+
         <c:otherwise>
           <div class="detail-grid">
             <div class="detail-block">
@@ -89,11 +99,21 @@
                 <span class="status-pill
                   ${myClaim.claimStatus == 'APPROVED' ? 'status-approved' :
                     myClaim.claimStatus == 'PENDING' ? 'status-pending' :
-                    myClaim.claimStatus == 'REJECTED' ? 'status-rejected' : 'status-default'}">
+                    myClaim.claimStatus == 'REJECTED' ? 'status-rejected' :
+                    myClaim.claimStatus == 'CANCELLED' ? 'status-rejected' : 'status-default'}">
                   <c:out value="${myClaim.claimStatus}" />
                 </span>
               </p>
               <p><strong>Claimed At:</strong> <c:out value="${myClaim.claimedAt}" /></p>
+
+              <c:if test="${myClaim.claimStatus == 'PENDING' || myClaim.claimStatus == 'APPROVED'}">
+                <form method="post" action="${pageContext.request.contextPath}/recipient/claim/cancel">
+                  <input type="hidden" name="claimId" value="${myClaim.claimId}" />
+                  <button type="submit" class="btn btn-danger">
+                    Cancel Claim
+                  </button>
+                </form>
+              </c:if>
             </div>
 
             <div class="detail-block">
