@@ -200,9 +200,9 @@ Functional requirements (GitHub Issues) owned:
 Contributed to backend development, including implementation of authentication and user management features. Worked on servlets related to user registration and login, and supported integration of database operations with the application.
 
 Functional requirements (GitHub Issues) owned:
-- Issue
-- Issue
-- Issue
+- Admin Dashboard & Access Control
+- Account Deletion & Password Change
+- User Registration & Login (Auth)
 
 ### Marl Jonson (`marljonson`)
 Contributed to system development and testing, including supporting frontend and backend integration. Revised and polished codebase and non-technical materials (``README.md``, video, reports).
