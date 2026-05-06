@@ -17,6 +17,10 @@
          class="btn btn-primary">
         Create Listing
       </a>
+      <a href="${pageContext.request.contextPath}/donor/listings"
+        class="btn btn-outline">
+        View My Listings
+      </a>
       <a href="${pageContext.request.contextPath}/donor/profile"
          class="btn btn-outline">
         Manage Organization
