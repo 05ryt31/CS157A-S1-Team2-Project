@@ -9,18 +9,26 @@
       Welcome, <c:out value="${sessionScope.fullName}" />
     </h1>
     <p class="dashboard-sub">
-      You are signed in as a <strong>Donor</strong>. Here's where you'll
-      manage surplus food listings.
+      You are signed in as a <strong>Donor</strong>. Create and manage surplus food listings.
     </p>
+
     <div class="dashboard-actions">
+      <a href="${pageContext.request.contextPath}/donor/listings/new"
+         class="btn btn-primary">
+        Create Listing
+      </a>
       <a href="${pageContext.request.contextPath}/donor/profile"
-         class="btn btn-outline">Manage Organization</a>
+         class="btn btn-outline">
+        Manage Organization
+      </a>
       <a href="${pageContext.request.contextPath}/account"
-         class="btn btn-outline">Account Settings</a>
+         class="btn btn-outline">
+        Account Settings
+      </a>
     </div>
 
     <div class="dashboard-placeholder">
-      <p>Listings management is coming soon.</p>
+      <p>Use the Create Listing button to start adding surplus food donations.</p>
     </div>
   </div>
 </main>
