@@ -5,23 +5,39 @@
 
 <main class="dashboard-page">
   <div class="container">
+
     <h1 class="dashboard-title">
       Welcome, <c:out value="${sessionScope.fullName}" />
     </h1>
+
     <p class="dashboard-sub">
       You are signed in as an <strong>Administrator</strong>. Here's
       where you'll verify organizations and review platform activity.
     </p>
+
     <div class="dashboard-actions">
+
       <a href="${pageContext.request.contextPath}/admin/org"
-         class="btn btn-outline">Manage My Organization</a>
+         class="btn btn-outline">
+        Manage My Organization
+      </a>
+
       <a href="${pageContext.request.contextPath}/account"
-         class="btn btn-outline">Account Settings</a>
+         class="btn btn-outline">
+        Account Settings
+      </a>
+
+      <a href="${pageContext.request.contextPath}/admin/claims"
+         class="btn btn-primary">
+        Manage Claims
+      </a>
+
     </div>
 
     <div class="dashboard-placeholder">
-      <p>Admin tools are coming soon.</p>
+      <p>Admin tools are now available for claim management.</p>
     </div>
+
   </div>
 </main>
 
