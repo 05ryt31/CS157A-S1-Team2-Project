@@ -15,7 +15,7 @@
     </p>
 
     <div class="dashboard-actions">
-      <a href="${pageContext.request.contextPath}/recipient/listings" class="btn btn-primary btn-lg">
+      <a href="${pageContext.request.contextPath}/recipient/listings" class="btn btn-primary">
         Browse Listings
       </a>
       <a href="${pageContext.request.contextPath}/recipient/profile" class="btn btn-outline">
@@ -69,7 +69,11 @@
 
                   <p>
                     <strong>Claim Status:</strong>
-                    <span class="status-pill status-default">
+                    <span class="status-pill
+                      ${claim.claimStatus == 'APPROVED' ? 'status-approved' :
+                        claim.claimStatus == 'PENDING' ? 'status-pending' :
+                        claim.claimStatus == 'REJECTED' ? 'status-rejected' :
+                        claim.claimStatus == 'CANCELLED' ? 'status-rejected' : 'status-default'}">
                       <c:out value="${claim.claimStatus}" />
                     </span>
                   </p>
@@ -81,7 +85,11 @@
                     <c:otherwise>
                       <p>
                         <strong>Pickup Status:</strong>
-                        <span class="status-pill status-default">
+                        <span class="status-pill
+                          ${claim.pickupStatus == 'COMPLETED' ? 'status-completed' :
+                            claim.pickupStatus == 'SCHEDULED' ? 'status-scheduled' :
+                            claim.pickupStatus == 'PICKED_UP' ? 'status-completed' :
+                            claim.pickupStatus == 'NO_SHOW' ? 'status-rejected' : 'status-default'}">
                           <c:out value="${claim.pickupStatus}" />
                         </span>
                       </p>
