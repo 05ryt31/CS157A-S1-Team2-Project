@@ -28,7 +28,12 @@
               <c:out value="${claim.listingTitle}" />
             </h3>
 
-            <span class="status-pill status-default">
+            <span class="status-pill
+              ${claim.status == 'APPROVED' ? 'status-approved' :
+                claim.status == 'PENDING' ? 'status-pending' :
+                claim.status == 'REQUESTED' ? 'status-pending' :
+                claim.status == 'REJECTED' ? 'status-rejected' :
+                claim.status == 'CANCELLED' ? 'status-rejected' : 'status-default'}">
               <c:out value="${claim.status}" />
             </span>
 
