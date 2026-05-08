@@ -15,7 +15,7 @@
     </p>
 
     <div class="dashboard-actions">
-      <a href="${pageContext.request.contextPath}/donor/listing/new" class="btn btn-primary">
+      <a href="${pageContext.request.contextPath}/donor/listings/new" class="btn btn-primary">
         Create Listing
       </a>
       <a href="${pageContext.request.contextPath}/donor/listings" class="btn btn-outline">
@@ -57,7 +57,7 @@
               <div class="item-row">
                 <div>
                   <p class="item-category">
-                    <a href="${pageContext.request.contextPath}/donor/listing?id=${claim.listingId}">
+                    <a href="${pageContext.request.contextPath}/donor/listings/detail?id=${claim.listingId}">
                       <c:out value="${claim.listingTitle}" />
                     </a>
                   </p>
