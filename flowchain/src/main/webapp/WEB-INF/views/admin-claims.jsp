@@ -16,6 +16,18 @@
       View and manage all recipient claims.
     </p>
 
+    <c:if test="${not empty success}">
+      <div class="dashboard-placeholder">
+        <p><strong><c:out value="${success}" /></strong></p>
+      </div>
+    </c:if>
+
+    <c:if test="${not empty error}">
+      <div class="dashboard-placeholder">
+        <p><strong><c:out value="${error}" /></strong></p>
+      </div>
+    </c:if>
+
     <div class="listings-grid">
 
       <c:forEach var="claim" items="${claims}">
@@ -54,16 +66,16 @@
             <c:out value="${claim.claimId}" />
           </p>
 
-          <c:if test="${claim.status == 'REQUESTED'}">
+          <c:if test="${claim.status == 'PENDING'}">
 
             <div class="filter-actions">
 
               <form method="post"
-                    action="${pageContext.request.contextPath}/donor/claim-action">
+                    action="${pageContext.request.contextPath}/admin/claim/action">
 
                 <input type="hidden"
                        name="csrfToken"
-                       value="<c:out value='${sessionScope.csrfToken}' />">
+                       value="<c:out value='${csrfToken}' />">
 
                 <input type="hidden"
                        name="claimId"
@@ -83,11 +95,11 @@
               </form>
 
               <form method="post"
-                    action="${pageContext.request.contextPath}/donor/claim-action">
+                    action="${pageContext.request.contextPath}/admin/claim/action">
 
                 <input type="hidden"
                        name="csrfToken"
-                       value="<c:out value='${sessionScope.csrfToken}' />">
+                       value="<c:out value='${csrfToken}' />">
 
                 <input type="hidden"
                        name="claimId"
