@@ -1,6 +1,7 @@
 package com.flowchain.servlet;
 
 import com.flowchain.db.DBConnection;
+import com.flowchain.util.CsrfUtil;
 
 import java.io.IOException;
 import java.sql.*;
@@ -49,6 +50,8 @@ public class AdminClaimsServlet extends HttpServlet {
 
         try {
 
+            req.setAttribute("csrfToken", CsrfUtil.getOrCreate(req));
+            moveFlashToRequest(req);
             req.setAttribute("claims", loadClaims());
 
             req.getRequestDispatcher("/WEB-INF/views/admin-claims.jsp")
@@ -96,5 +99,20 @@ public class AdminClaimsServlet extends HttpServlet {
         }
 
         return rows;
+    }
+
+    private static void moveFlashToRequest(HttpServletRequest req) {
+        HttpSession session = req.getSession(false);
+        if (session == null) return;
+
+        Object type = session.getAttribute("flashType");
+        Object message = session.getAttribute("flashMessage");
+
+        if (type != null && message != null) {
+            req.setAttribute(String.valueOf(type), message);
+        }
+
+        session.removeAttribute("flashType");
+        session.removeAttribute("flashMessage");
     }
 }
