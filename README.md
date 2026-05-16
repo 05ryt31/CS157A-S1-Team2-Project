@@ -188,9 +188,7 @@ Contributed across system design, documentation, frontend development, backend i
 
 Worked on major sections of the project proposal, database design report, and final report, including functional requirements, ER modeling, Project Implementation, Lesson Learned, and Individual Contribution.
 
-Primarily implemented the Recipient and Administrator functionality of the application while also contributing to parts of the Donor workflow. Developed features including listing browsing, searching and filtering, listing detail pages, recipient claim workflows, donor approval and rejection functionality, and administrator claim management.
-
-Also contributed to frontend UI development, database configuration, deployment troubleshooting using Apache Tomcat and Maven, and maintenance of the project `README.md`.
+Primarily implemented the Recipient and Administrator functionality of the application while also contributing to parts of the Donor workflow. Developed features including listing browsing, searching and filtering, listing detail pages, recipient claim workflows, donor approval and rejection functionality, and administrator claim management. Also contributed to frontend UI development, database configuration, deployment troubleshooting using Apache Tomcat and Maven, and maintenance of the project `README.md`.
 
 Functional requirements (GitHub Issues) owned:
 - Food Categories Setup
