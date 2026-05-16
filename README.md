@@ -184,13 +184,13 @@ This project was developed as part of our Database Management Systems course. Th
 ## Contributions  
 
 ### Yug More (`Yug-More`)
-Contributed across ideation, system design, documentation, frontend development, backend implementation, and deployment. Proposed the FlowChain concept based on research on food waste challenges and helped define the overall system workflow.
+Contributed across system design, documentation, frontend development, backend implementation, and deployment. Proposed the FlowChain concept based on research on food waste challenges and helped define the overall system workflow.
 
-Completed major sections of the project proposal and database design report, including functional requirements, ER modeling, and relational schema development. Also consolidated and refined the final project report by completing sections such as Project Implementation, Lesson Learned, and Individual Contribution.
+Worked on major sections of the project proposal, database design report, and final report, including functional requirements, ER modeling, Project Implementation, Lesson Learned, and Individual Contribution.
 
-Primarily worked on the Recipient and Administrator functionality of the application while also contributing to parts of the Donor workflow. Implemented recipient listing browsing, searching and filtering, listing detail pages, recipient claim workflows, claim cancellation, donor approval and rejection functionality, and administrator claim management features.
+Primarily implemented the Recipient and Administrator functionality of the application while also contributing to parts of the Donor workflow. Developed features including listing browsing, searching and filtering, listing detail pages, recipient claim workflows, donor approval and rejection functionality, and administrator claim management.
 
-Also contributed to frontend UI development, database connectivity configuration, deployment troubleshooting using Apache Tomcat and Maven, and maintenance of the project `README.md` documentation.
+Also contributed to frontend UI development, database configuration, deployment troubleshooting using Apache Tomcat and Maven, and maintenance of the project `README.md`.
 
 Functional requirements (GitHub Issues) owned:
 - Food Categories Setup
