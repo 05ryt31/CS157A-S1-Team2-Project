@@ -184,17 +184,22 @@ This project was developed as part of our Database Management Systems course. Th
 ## Contributions  
 
 ### Yug More (`Yug-More`)
-Contributed across ideation, design, documentation, and implementation. Proposed the FlowChain concept based on research on food waste and helped define the system direction. Completed key sections of the project proposal including Background Information, Project Description, and Functional Requirements.  
+Contributed across ideation, system design, documentation, frontend development, backend implementation, and deployment. Proposed the FlowChain concept based on research on food waste challenges and helped define the overall system direction and workflow.
 
-Led major parts of the database design, including defining entities, relationships, and creating the ER diagram and relational schemas. Also helped merge all reports into the final submission.  
+Completed major sections of the project proposal including Background Information, Project Description, and Functional Requirements. Also played a significant role in the database design process by identifying entities, attributes, relationships, ER modeling, and relational schema development. Additionally, consolidated and refined the final project documentation by merging reports and completing major sections including Project Implementation, Lesson Learned, and Individual Contribution.
 
-On the implementation side, built the recipient functionality using `RecipientListingsServlet.java` and `RecipientListingDetailServlet.java`, along with `recipient-listings.jsp` and `recipient-listing-detail.jsp`. Implemented search and filtering, dynamic data rendering, and handled database integration and deployment using Tomcat.
+On the implementation side, primarily worked on the Recipient and Administrator functionality while also contributing to parts of the Donor workflow. Fully developed and implemented backend files including `RecipientListingsServlet.java`, `RecipientListingDetailServlet.java`, `ClaimListingServlet.java`, `CancelClaimServlet.java`, `UpdateClaimStatusServlet.java`, and `AdminClaimsServlet.java`.
+
+Worked extensively on frontend files including `recipient-listings.jsp`, `recipient-listing-detail.jsp`, `recipient-dashboard.jsp`, `admin-claims.jsp`, `admin-dashboard.jsp`, `donor-dashboard.jsp`, and `register.jsp`, while also contributing to parts of `style.css`. Implemented search and filtering functionality, dynamic listing rendering, recipient claim workflows, claim cancellation, donor approval/rejection functionality, and administrator claim management interfaces.
+
+Also configured database connectivity using `db.properties`, resolved deployment and debugging issues related to Apache Tomcat and Maven, and maintained the project `README.md` with setup instructions, features, execution steps, and contribution details.
 
 Functional requirements (GitHub Issues) owned:
 - Food Categories Setup
 - Recipient: Browse & Search Listings
 - Recipient: Claim a Listing
 - Listing Detail Page & Status Display
+- Admin Claim Management Dashboard
 
 ### Ryuto Kawabata (`05ryt31`)
 Contributed to backend development, including implementation of authentication and user management features. Worked on servlets related to user registration and login, and supported integration of database operations with the application.
