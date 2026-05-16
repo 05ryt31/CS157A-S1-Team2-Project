@@ -184,15 +184,13 @@ This project was developed as part of our Database Management Systems course. Th
 ## Contributions  
 
 ### Yug More (`Yug-More`)
-Contributed across ideation, system design, documentation, frontend development, backend implementation, and deployment. Proposed the FlowChain concept based on research on food waste challenges and helped define the overall system direction and workflow.
+Contributed across ideation, system design, documentation, frontend development, backend implementation, and deployment. Proposed the FlowChain concept based on research on food waste challenges and helped define the overall system workflow.
 
-Completed major sections of the project proposal including Background Information, Project Description, and Functional Requirements. Also played a significant role in the database design process by identifying entities, attributes, relationships, ER modeling, and relational schema development. Additionally, consolidated and refined the final project documentation by merging reports and completing major sections including Project Implementation, Lesson Learned, and Individual Contribution.
+Completed major sections of the project proposal and database design report, including functional requirements, ER modeling, and relational schema development. Also consolidated and refined the final project report by completing sections such as Project Implementation, Lesson Learned, and Individual Contribution.
 
-On the implementation side, primarily worked on the Recipient and Administrator functionality while also contributing to parts of the Donor workflow. Fully developed and implemented backend files including `RecipientListingsServlet.java`, `RecipientListingDetailServlet.java`, `ClaimListingServlet.java`, `CancelClaimServlet.java`, `UpdateClaimStatusServlet.java`, and `AdminClaimsServlet.java`.
+Primarily worked on the Recipient and Administrator functionality of the application while also contributing to parts of the Donor workflow. Implemented recipient listing browsing, searching and filtering, listing detail pages, recipient claim workflows, claim cancellation, donor approval and rejection functionality, and administrator claim management features.
 
-Worked extensively on frontend files including `recipient-listings.jsp`, `recipient-listing-detail.jsp`, `recipient-dashboard.jsp`, `admin-claims.jsp`, `admin-dashboard.jsp`, `donor-dashboard.jsp`, and `register.jsp`, while also contributing to parts of `style.css`. Implemented search and filtering functionality, dynamic listing rendering, recipient claim workflows, claim cancellation, donor approval/rejection functionality, and administrator claim management interfaces.
-
-Also configured database connectivity using `db.properties`, resolved deployment and debugging issues related to Apache Tomcat and Maven, and maintained the project `README.md` with setup instructions, features, execution steps, and contribution details.
+Also contributed to frontend UI development, database connectivity configuration, deployment troubleshooting using Apache Tomcat and Maven, and maintenance of the project `README.md` documentation.
 
 Functional requirements (GitHub Issues) owned:
 - Food Categories Setup
